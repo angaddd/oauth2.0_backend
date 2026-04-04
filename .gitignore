@@ -1,0 +1,12 @@
+.venv/
+venv/
+__pycache__/
+**/__pycache__/
+*.pyc
+db.sqlite3
+*.log
+.env
+
+# Django media/static if generated locally
+media/
+staticfiles/
