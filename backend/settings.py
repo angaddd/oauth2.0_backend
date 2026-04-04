@@ -20,6 +20,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'social_django',
     'accounts',
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
@@ -32,6 +33,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'social_django.middleware.SocialAuthExceptionMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
@@ -103,3 +105,4 @@ SOCIAL_AUTH_REDIRECT_IS_HTTPS = False
 LOGIN_URL = '/signin/'
 LOGIN_REDIRECT_URL = '/success/'
 LOGOUT_REDIRECT_URL = '/signin/'
+CORS_ALLOW_ALL_ORIGINS = True
