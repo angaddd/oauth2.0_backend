@@ -105,4 +105,9 @@ SOCIAL_AUTH_REDIRECT_IS_HTTPS = False
 LOGIN_URL = '/signin/'
 LOGIN_REDIRECT_URL = '/success/'
 LOGOUT_REDIRECT_URL = '/signin/'
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = ["https://oauth2-o-frontend.vercel.app",
+]
+CORS_ALLOW_CREDENTIALS = True
+CSRF_TRUSTED_ORIGINS = [
+    "https://oauth2-o-frontend.vercel.app",
+]
