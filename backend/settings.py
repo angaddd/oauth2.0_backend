@@ -109,6 +109,10 @@ CORS_ALLOWED_ORIGINS = [
     "https://oauth2-o-frontend.vercel.app",
 ]
 
+CORS_ALLOW_HEADERS = [
+    "content-type",
+    "x-csrftoken",
+]
 CORS_ALLOW_CREDENTIALS = True
 CSRF_TRUSTED_ORIGINS = [
     "https://oauth2-o-frontend.vercel.app",
@@ -121,3 +125,5 @@ CSRF_COOKIE_SECURE = True
 
 CSRF_COOKIE_DOMAIN = None
 SESSION_COOKIE_DOMAIN = None
+CSRF_COOKIE_HTTPONLY = False 
+CSRF_USE_SESSIONS = False
