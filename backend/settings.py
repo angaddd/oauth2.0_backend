@@ -24,6 +24,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -33,7 +34,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'social_django.middleware.SocialAuthExceptionMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    "corsheaders.middleware.CorsMiddleware",
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
@@ -105,9 +105,19 @@ SOCIAL_AUTH_REDIRECT_IS_HTTPS = False
 LOGIN_URL = '/signin/'
 LOGIN_REDIRECT_URL = '/success/'
 LOGOUT_REDIRECT_URL = '/signin/'
-CORS_ALLOW_ALL_ORIGINS = ["https://oauth2-o-frontend.vercel.app",
+CORS_ALLOWED_ORIGINS = [
+    "https://oauth2-o-frontend.vercel.app",
 ]
+
 CORS_ALLOW_CREDENTIALS = True
 CSRF_TRUSTED_ORIGINS = [
     "https://oauth2-o-frontend.vercel.app",
 ]
+SESSION_COOKIE_SAMESITE = "None"
+CSRF_COOKIE_SAMESITE = "None"
+
+SESSION_COOKIE_SECURE = True   # (True only in HTTPS production)
+CSRF_COOKIE_SECURE = True
+
+CSRF_COOKIE_DOMAIN = None
+SESSION_COOKIE_DOMAIN = None

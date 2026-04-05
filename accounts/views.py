@@ -3,13 +3,13 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.http import JsonResponse
 from django.conf import settings
+from django.middleware.csrf import get_token
 from django.views.decorators.csrf import ensure_csrf_cookie
 
 
 @ensure_csrf_cookie
 def csrf_view(request):
-    # Ensures the CSRF cookie is set for the React app
-    return JsonResponse({'ok': True})
+    return JsonResponse({'csrfToken': get_token(request)})
 
 
 def signup_view(request):
